@@ -8,11 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import fisherman77.zeuscraft.common.blocks.ItemBlockMarble;
 import fisherman77.zeuscraft.common.cbronze.WorldGeneratorCBronzeOre;
 import fisherman77.zeuscraft.common.mobs.EntityCentaur;
 
@@ -45,14 +47,15 @@ public void registerBlocks(){ //For registering Blocks
 		GameRegistry.registerBlock(Zeuscraft.CBronzeOre, "CBronzeOre");
 		LanguageRegistry.addName(Zeuscraft.CBronzeOre, "Celestial Bronze Ore");
 		OreDictionary.registerOre("oreCelestialBronze", Zeuscraft.CBronzeOre);
-			
+		MinecraftForge.setBlockHarvestLevel(Zeuscraft.CBronzeOre, "pickaxe", 2);
+		
 	//Column
 		GameRegistry.registerBlock(Zeuscraft.Column, "Column");
 		LanguageRegistry.addName(Zeuscraft.Column, "Column");
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Column,1), "XXX","XXX","XXX", Character.valueOf('X'), Block.bedrock);
 		
 	//Marble
-		GameRegistry.registerBlock(Zeuscraft.Marble, "Marble");
+		GameRegistry.registerBlock(Zeuscraft.Marble, ItemBlockMarble.class,"Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,0), "White Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,1), "Pink Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,2), "Green Marble");
@@ -73,19 +76,43 @@ public void registerBlocks(){ //For registering Blocks
 
 public void registerItems(){ //For adding Item's ingame names
 	//Celestial Bronze Axe
-		
-	//Celestial Bronze Hoe
+		LanguageRegistry.addName(Zeuscraft.CBronzeAxe, "Celestial Bronze Axe");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeAxe,1), "XX ", "XD ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeAxe,1), " XX", " DX", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
 	
+	//Celestial Bronze Hoe
+		LanguageRegistry.addName(Zeuscraft.CBronzeHoe, "Celesital Bronze Hoe");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeHoe,1), "XX ", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeHoe,1), " XX", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
+		
 	//Celestial Bronze Ingot
 		LanguageRegistry.addName(Zeuscraft.CBronzeIngot, "Celestial Bronze Ingot");
 		GameRegistry.addSmelting(Zeuscraft.CBronzeOre.blockID, new ItemStack(Zeuscraft.CBronzeIngot), 5);
 		OreDictionary.registerOre("gemCelestialBronze", Zeuscraft.CBronzeIngot);
 
 	//Celestial Bronze Pickaxe
+		LanguageRegistry.addName(Zeuscraft.CBronzePickaxe, "Celestial Bronze Pickaxe");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzePickaxe,1), "XXX", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
 		
 	//Celestial Bronze Spade
+		LanguageRegistry.addName(Zeuscraft.CBronzePickaxe, "Celestial Bronze Spade");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeSpade,1), " X ", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
 		
 	//Celestial Bronze Sword
+		LanguageRegistry.addName(Zeuscraft.CBronzeSword, "Celestial Bronze Sword");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeHoe,1), " X ", " X ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
+		
+	//Dragon Tooth
+		LanguageRegistry.addName(Zeuscraft.DragonTooth, "Dragon Tooth");
+		
+	//Golden Fleece
+		LanguageRegistry.addName(Zeuscraft.GoldenFleece, "Golden Fleece");
+		
+	//Nectar
+		LanguageRegistry.addName(Zeuscraft.Nectar, "Nectar");
+		
+	//Harpie Head
+		LanguageRegistry.addName(Zeuscraft.HarpieHead, "Harpie Head");
 		
 	//Pegasus Feather
 		LanguageRegistry.addName(Zeuscraft.PegasusFeather, "Pegasus Feather");

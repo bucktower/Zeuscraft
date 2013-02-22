@@ -18,6 +18,9 @@ public BlockColumn(int ID){
          setStepSound(Block.soundStoneFootstep); //The sounds the block makes
          setCreativeTab(Zeuscraft.tabZeuscraft); //The tab it appears in
          setTextureFile("/Zeuscraft/ZeuscraftBlocks.png"); //The texture file
+         
+         
+         
 }
 
 @SideOnly(Side.CLIENT)

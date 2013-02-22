@@ -4,28 +4,28 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
-public class RenderCentaur extends RenderLiving
+public class RenderHarpie extends RenderLiving
 {
- protected ModelCentaur model;
+ protected ModelHarpie model;
  
- public RenderCentaur (ModelCentaur modelCentaur, float f)
+ public RenderHarpie (ModelHarpie modelHarpie, float f)
  {
-  super(modelCentaur, f);
-  model = ((ModelCentaur)mainModel);
+  super(modelHarpie, f);
+  model = ((ModelHarpie)mainModel);
  }
  
- public void renderCentaur(EntityCentaur entity, double par2, double par4, double par6, float par8, float par9)
+ public void renderHarpie(EntityHarpie entity, double par2, double par4, double par6, float par8, float par9)
     {
         super.doRenderLiving(entity, par2, par4, par6, par8, par9);
     }
  
  public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
     {
-        renderCentaur((EntityCentaur)par1EntityLiving, par2, par4, par6, par8, par9);
+        renderHarpie((EntityHarpie)par1EntityLiving, par2, par4, par6, par8, par9);
     }
  
  public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
     {
-        renderCentaur((EntityCentaur)par1Entity, par2, par4, par6, par8, par9);
+        renderHarpie((EntityHarpie)par1Entity, par2, par4, par6, par8, par9);
     }
 }
