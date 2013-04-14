@@ -26,4 +26,8 @@ public class EntityGSheep extends EntityMob
   {
    return 10;
   }
-  
+  public EnumCreatureAttribute getCreatureAttribute()
+  {
+    return EnumCreatureAttribute.UNDEAD;
+  }
+}
