@@ -7,17 +7,22 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.*;
 import fisherman77.zeuscraft.common.Zeuscraft;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class ItemTrident extends Item {
 public ItemTrident(int par1) {
 		super(par1); //Returns super constructor: par1 is ID
-		setTextureFile("/Zeuscraft/ZeuscraftItems.png"); //Sets the item texture file
-		setItemName("Trident"); //Sets the incode name of the item, make sure it doesn't clash with other items, weird stuff happens
+		setUnlocalizedName("Trident"); //Sets the incode name of the item, make sure it doesn't clash with other items, weird stuff happens
 		setCreativeTab(Zeuscraft.tabZeuscraft); //Tells the game what creative mode tab it goes in
-		setIconIndex(3);
 }
+
+@SideOnly(Side.CLIENT)
+public void updateIcons(IconRegister par1IconRegister)
+    {
+        this.iconIndex = par1IconRegister.registerIcon("Zeuscraft:Trident");
+    }
 
 /**
  * Callback for item usage. If the item does something special on right clicking, he will have one of those. Return
@@ -66,7 +71,7 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
         if (var11 == 0)
         {
             par3World.playSoundEffect((double)par4 + 0.5D, (double)par5 + 0.5D, (double)par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-            par3World.setBlockWithNotify(par4, par5, par6, Block.waterStill.blockID);
+            par3World.setBlock(par4, par5, par6, Block.waterStill.blockID);
         }
 
         par1ItemStack.damageItem(1, par2EntityPlayer);

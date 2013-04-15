@@ -19,8 +19,6 @@ import net.minecraftforge.client.MinecraftForgeClient;
 public class ZeuscraftClientProxy extends ZeuscraftCommonProxy {
         
 public void registerRenderInformation(){
-	MinecraftForgeClient.preloadTexture(ITEMS_PNG);
-	MinecraftForgeClient.preloadTexture(BLOCK_PNG);
 }
 
 public void registerRenderers(){

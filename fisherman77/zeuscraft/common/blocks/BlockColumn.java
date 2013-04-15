@@ -11,13 +11,11 @@ import fisherman77.zeuscraft.common.Zeuscraft;
 public class BlockColumn extends Block{
 public BlockColumn(int ID){
          super(ID,Material.rock); //The ID and material
-        
-         setBlockName("Column"); //The incode name
+         
          setHardness(3.0F); //How hard the block is
          setResistance(5.0F); //How well the block resists explosions
          setStepSound(Block.soundStoneFootstep); //The sounds the block makes
          setCreativeTab(Zeuscraft.tabZeuscraft); //The tab it appears in
-         setTextureFile("/Zeuscraft/ZeuscraftBlocks.png"); //The texture file
          
          
          

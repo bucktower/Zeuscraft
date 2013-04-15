@@ -3,6 +3,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fisherman77.zeuscraft.common.Zeuscraft;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
@@ -23,11 +24,14 @@ public ItemCBronzeHoe(int par1, EnumToolMaterial rubyMat, int tex, String name)
          this.maxStackSize = 1;
          this.setMaxDamage(rubyMat.getMaxUses());
          this.setCreativeTab(Zeuscraft.tabZeuscraft);
-         setIconIndex(tex);
-         setItemName(name);
-         setTextureFile("/Zeuscraft/ZeuscraftItems.png");
         
 }
+
+@SideOnly(Side.CLIENT)
+public void updateIcons(IconRegister par1IconRegister)
+    {
+        this.iconIndex = par1IconRegister.registerIcon("Zeuscraft:CBronzeHoe");
+    }
 
 public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
 {
@@ -63,7 +67,7 @@ public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer,
                          }
                          else
                          {
-                                 par3World.setBlockWithNotify(par4, par5, par6, var13.blockID);
+                                 par3World.setBlock(par4, par5, par6, var13.blockID);
                                  par1ItemStack.damageItem(1, par2EntityPlayer);
                                  return true;
                          }

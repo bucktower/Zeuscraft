@@ -19,9 +19,6 @@ import fisherman77.zeuscraft.common.cbronze.WorldGeneratorCBronzeOre;
 import fisherman77.zeuscraft.common.mobs.EntityCentaur;
 
 public class ZeuscraftCommonProxy implements IGuiHandler{//THIS IS IMPORTANT, CANNOT BE A PROXY/GUI HANDLER WITHOUT THIS!!
-	
-	public static String ITEMS_PNG = "/Zeuscraft/ZeuscraftItems.png";
-    public static String BLOCK_PNG = "/Zeuscraft/ZeuscraftBlocks.png";
     
 public void registerRenderInformation() //Client side texture registering
 {
@@ -39,10 +36,6 @@ public void registerTiles(){ //For registering TileEntities
 }
 
 public void registerBlocks(){ //For registering Blocks
-	//Celestial Bronze Block
-		GameRegistry.registerBlock(Zeuscraft.CBronzeBlock, "CBronzeBlock");
-		LanguageRegistry.addName(Zeuscraft.CBronzeBlock, "Celestial Bronze Block");
-		
 	//Celestial Bronze Ore
 		GameRegistry.registerBlock(Zeuscraft.CBronzeOre, "CBronzeOre");
 		LanguageRegistry.addName(Zeuscraft.CBronzeOre, "Celestial Bronze Ore");
@@ -64,17 +57,17 @@ public void registerBlocks(){ //For registering Blocks
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,5), "Red Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,6), "Marble");
 		
-	//Minotaur Head
-		GameRegistry.registerBlock(Zeuscraft.MinotaurHead, "MinotaurHead");
-		LanguageRegistry.addName(new ItemStack(Zeuscraft.MinotaurHead), "Minotaur Head");
-		
-	//Olympus Portal
-		GameRegistry.registerBlock(Zeuscraft.OlympusPortal, "OlympusPortal");
-		LanguageRegistry.addName(new ItemStack(Zeuscraft.OlympusPortal), "Olympus Portal");
-		
 }
 
 public void registerItems(){ //For adding Item's ingame names
+	//Bow Golden
+		LanguageRegistry.addName(Zeuscraft.BowGolden, "Golden Bow");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.BowGolden, 1), " X ", "XM ", " X ", Character.valueOf('X'), Item.ingotGold, Character.valueOf('M'), Item.silk);
+		
+	//Bow Golden
+		LanguageRegistry.addName(Zeuscraft.BowSilver, "Silver Bow");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.BowSilver, 1), " X ", "XM ", " X ", Character.valueOf('X'), Item.ingotIron, Character.valueOf('M'), Item.silk);
+		
 	//Celestial Bronze Axe
 		LanguageRegistry.addName(Zeuscraft.CBronzeAxe, "Celestial Bronze Axe");
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeAxe,1), "XX ", "XD ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
@@ -95,7 +88,7 @@ public void registerItems(){ //For adding Item's ingame names
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzePickaxe,1), "XXX", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
 		
 	//Celestial Bronze Spade
-		LanguageRegistry.addName(Zeuscraft.CBronzePickaxe, "Celestial Bronze Spade");
+		LanguageRegistry.addName(Zeuscraft.CBronzeSpade, "Celestial Bronze Spade");
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.CBronzeSpade,1), " X ", " D ", " D ", Character.valueOf('X'), Zeuscraft.CBronzeIngot, Character.valueOf('D'), Item.stick);
 		
 	//Celestial Bronze Sword
@@ -110,9 +103,6 @@ public void registerItems(){ //For adding Item's ingame names
 		
 	//Nectar
 		LanguageRegistry.addName(Zeuscraft.Nectar, "Nectar");
-		
-	//Harpie Head
-		LanguageRegistry.addName(Zeuscraft.HarpieHead, "Harpie Head");
 		
 	//Pegasus Feather
 		LanguageRegistry.addName(Zeuscraft.PegasusFeather, "Pegasus Feather");

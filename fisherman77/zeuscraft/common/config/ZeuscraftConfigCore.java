@@ -16,6 +16,7 @@ public static int itemHarpieHeadID;
 public static int itemNectarID;
 public static int itemPegasusSaddleID;
 public static int itemPegasusFeatherID;
+public static int itemReedPipesID;
 public static int itemThunderboltID;
 public static int itemThunderPearlID;
 public static int itemTridentID;
@@ -49,35 +50,36 @@ CBronzeItem = config.getItem("Celestial Bronze Ingot ID", 1400); //This gets the
 //CBronzeItem.comment = "The base CBronze item"; //This adds a comment
 itemCBronzeIngotID = CBronzeItem.getInt(); //This gets the value*/
 
-//Item ID's
-itemCBronzeIngotID = config.getItem("Celestial Bronze Ingot ID", 1401).getInt();
-itemBowGoldenID = config.getItem("Golden Bow ID", 1402).getInt();
-itemBowSilverID = config.getItem("Silver Bow ID", 1403).getInt();
-itemDragonToothID = config.getItem("Dragon Tooth ID", 1404).getInt();
-itemGoldenFleeceID = config.getItem("Golden Fleece ID", 1405).getInt();
-itemHarpieHeadID = config.getItem("Harpie Head Item ID", 1406).getInt();
-itemNectarID = config.getItem("Nectar ID", 1407).getInt();
-itemPegasusSaddleID = config.getItem("Pegasus Saddle ID", 1408).getInt();
-itemPegasusFeatherID = config.getItem("Pegasus Feather ID", 1410).getInt();
-itemThunderboltID = config.getItem("Thunderbolt ID", 1411).getInt();
-itemThunderPearlID = config.getItem("Thunder Pearl ID", 1412).getInt();
-itemTridentID = config.getItem("Trident ID", 1413).getInt();
-itemWaterPearlID = config.getItem("Water Pearl ID", 1414).getInt();
+//Item ID's (last left off: 1414)
+itemCBronzeIngotID = config.getItem("Celestial Bronze Ingot ID", 4500).getInt(4500);
+itemBowGoldenID = config.getItem("Golden Bow ID", 4501).getInt(4501);
+itemBowSilverID = config.getItem("Silver Bow ID", 4502).getInt(4502);
+itemDragonToothID = config.getItem("Dragon Tooth ID", 4503).getInt(4503);
+itemGoldenFleeceID = config.getItem("Golden Fleece ID", 4504).getInt(4504);
+itemHarpieHeadID = config.getItem("Harpie Head Item ID", 4505).getInt(4505);
+itemNectarID = config.getItem("Nectar ID", 4506).getInt(4506);
+itemPegasusSaddleID = config.getItem("Pegasus Saddle ID", 4507).getInt(4507);
+itemPegasusFeatherID = config.getItem("Pegasus Feather ID", 4508).getInt(4508);
+itemReedPipesID = config.getItem("Reed Pipes ID", 4509).getInt(4509);
+itemThunderboltID = config.getItem("Thunderbolt ID", 4510).getInt(4510);
+itemThunderPearlID = config.getItem("Thunder Pearl ID", 4511).getInt(4511);
+itemTridentID = config.getItem("Trident ID", 4512).getInt(4512);
+itemWaterPearlID = config.getItem("Water Pearl ID", 4513).getInt(4513);
 
 //Tool ID's
-toolCBronzeShovelID = config.getItem("CBronze Shovel", 1450).getInt();
-toolCBronzePickID = config.getItem("CBronze Pick", 1451).getInt();
-toolCBronzeAxeID = config.getItem("CBronze Axe", 1452).getInt();
-toolCBronzeSwordID = config.getItem("CBronze Sword", 1453).getInt();
-toolCBronzeHoeID = config.getItem("CBronze Hoe", 1454).getInt();
+toolCBronzeShovelID = config.getItem("CBronze Shovel", 4514).getInt(4514);
+toolCBronzePickID = config.getItem("CBronze Pick", 4515).getInt(4515);
+toolCBronzeAxeID = config.getItem("CBronze Axe", 4516).getInt(4516);
+toolCBronzeSwordID = config.getItem("CBronze Sword", 4517).getInt(4517);
+toolCBronzeHoeID = config.getItem("CBronze Hoe", 4518).getInt(4518);
 
 //Block ID's
-blockCBronzeBlockID = config.getBlock("Celestial Bronze Block ID", 1200).getInt();
-blockCBronzeOreID = config.getBlock("Celestial Bronze Ore ID", 1201).getInt();
-blockColumnID = config.getBlock("Column ID", 1202).getInt();
-blockMarbleID = config.getBlock("Marble ID", 1203).getInt();
-blockMinotaurHeadID = config.getBlock("Minotaur Head ID", 1204).getInt();
-blockOlympusPortalID = config.getBlock("Olympus Portal ID", 1205).getInt();
+blockCBronzeBlockID = config.getBlock("Celestial Bronze Block ID", 1200).getInt(1200);
+blockCBronzeOreID = config.getBlock("Celestial Bronze Ore ID", 1201).getInt(1201);
+blockColumnID = config.getBlock("Column ID", 1202).getInt(1202);
+blockMarbleID = config.getBlock("Marble ID", 1203).getInt(1203);
+blockMinotaurHeadID = config.getBlock("Minotaur Head ID", 1204).getInt(1204);
+blockOlympusPortalID = config.getBlock("Olympus Portal ID", 1205).getInt(1205);
 
 //General
 //isAwesome = config.get(config.CATEGORY_GENERAL, "Is the mod awesome", true).getBoolean(true);

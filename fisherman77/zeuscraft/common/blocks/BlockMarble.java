@@ -12,12 +12,10 @@ public class BlockMarble extends Block{
 public BlockMarble(int ID){
          super(ID,Material.rock); //The ID and material
         
-         setBlockName("Marble"); //The incode name
          //setHardness(3.0F); //How hard the block is
          //setResistance(5.0F); //How well the block resists explosions
          setStepSound(Block.soundStoneFootstep); //The sounds the block makes
          setCreativeTab(Zeuscraft.tabZeuscraft); //The tab it appears in
-         setTextureFile("/Zeuscraft/ZeuscraftBlocks.png"); //The texture file
 }
 
 public int getBlockTextureFromSideAndMetadata(int i, int j){ //The different textures fo different metadatas

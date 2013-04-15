@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import fisherman77.zeuscraft.common.Zeuscraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -28,10 +29,13 @@ this.maxStackSize = 1; //The max size of the itemstack
 this.setMaxDamage(material.getMaxUses()); //The durability
 this.setCreativeTab(Zeuscraft.tabZeuscraft);
 this.weaponDamage = 4 + toolMaterial.getDamageVsEntity(); //How strong it is on enemies
-setTextureFile("/Zeuscraft/ZeuscraftItems.png");
-this.setIconIndex(tex); //Sets the texture
-setItemName(name);
 }
+
+@SideOnly(Side.CLIENT)
+public void updateIcons(IconRegister par1IconRegister)
+    {
+        this.iconIndex = par1IconRegister.registerIcon("Zeuscraft:CBronzeSword");
+    }
 
 public int func_82803_g()
 {
