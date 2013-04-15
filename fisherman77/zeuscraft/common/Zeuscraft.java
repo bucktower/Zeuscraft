@@ -115,8 +115,8 @@ public static ZeuscraftCommonProxy proxy;
 				Marble = (new BlockMarble(cc.blockMarbleID).setUnlocalizedName("Marble"));
 				
 		//ITEMS
-				BowGolden = new ItemBowGolden(cc.itemBowGoldenID);
-				BowSilver = new ItemBowSilver(cc.itemBowSilverID);
+				BowGolden = new ItemBowGolden(cc.itemBowGoldenID).setUnlocalizedName("BowGolden");
+				BowSilver = new ItemBowSilver(cc.itemBowSilverID).setUnlocalizedName("BowSilver");
 				CBronzeAxe = new ItemCBronzeAxe(cc.toolCBronzeAxeID, celestialBronze, 13, "CBronzeAxe");
 				CBronzeHoe = new ItemCBronzeHoe(cc.toolCBronzeHoeID, celestialBronze, 14, "CBronzeHoe");
 				CBronzeIngot = new ItemCBronzeIngot(cc.itemCBronzeIngotID);
