@@ -42,11 +42,12 @@ public class EntityHostileCentaur extends EntityMob implements IRangedAttackMob
     public EntityHostileCentaur(World par1World)
     {
         super(par1World);
-        this.texture = "/Zeuscraft/Mobs/CentaurHostile/centaurblack.png";
+        this.texture = "/mob/skeleton.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(3, new EntityAIWander(this, this.moveSpeed));
+        this.tasks.addTask(2, new EntityAIWander(this, this.moveSpeed));
+        this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(3, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 16.0F, 0, true));
 
@@ -75,6 +76,15 @@ public class EntityHostileCentaur extends EntityMob implements IRangedAttackMob
         return 20;
     }
 
+
+    /**
+     * Returns the amount of damage a mob should deal.
+     */
+    public int getAttackStrength(Entity par1Entity)
+    {
+            return super.getAttackStrength(par1Entity);
+    }
+
     /**
      * Get this Entity's EnumCreatureAttribute
      */
@@ -82,20 +92,13 @@ public class EntityHostileCentaur extends EntityMob implements IRangedAttackMob
     {
         return EnumCreatureAttribute.UNDEAD;
     }
-    
-    /**
-     * Called when the mob's health reaches 0.
-     */
-    public void onDeath(DamageSource par1DamageSource)
-    {
-        super.onDeath(par1DamageSource);
 
-        if (par1DamageSource.getSourceOfDamage() instanceof EntityArrow && par1DamageSource.getEntity() instanceof EntityPlayer)
-        {
-            EntityPlayer entityplayer = (EntityPlayer)par1DamageSource.getEntity();
-            double d0 = entityplayer.posX - this.posX;
-            double d1 = entityplayer.posZ - this.posZ;
-        }
+    /**
+     * Returns the item ID for the item the mob drops on death.
+     */
+    protected int getDropItemId()
+    {
+        return Item.arrow.itemID;
     }
 
     /**
@@ -104,7 +107,38 @@ public class EntityHostileCentaur extends EntityMob implements IRangedAttackMob
      */
     protected void dropFewItems(boolean par1, int par2)
     {
-    	this.dropItem(Item.coal.itemID, 1);
+        int j;
+        int k;
+            j = this.rand.nextInt(3 + par2);
+
+            for (k = 0; k < j; ++k)
+            {
+                this.dropItem(Item.arrow.itemID, 1);
+            }
+        
+
+        j = this.rand.nextInt(3 + par2);
+
+        for (k = 0; k < j; ++k)
+        {
+            this.dropItem(Item.bone.itemID, 1);
+        }
+    }
+
+    protected void dropRareDrop(int par1)
+    {
+            this.entityDropItem(new ItemStack(Item.skull.itemID, 1, 1), 0.0F);
+    }
+
+    /**
+     * Initialize this creature.
+     */
+    public void initCreature()
+    {
+            this.tasks.addTask(4, this.aiArrowAttack);
+            this.func_82162_bC();
+
+        this.setCanPickUpLoot(this.rand.nextFloat() < pickUpLootProability[this.worldObj.difficultySetting]);
     }
 
     /**
@@ -148,5 +182,18 @@ public class EntityHostileCentaur extends EntityMob implements IRangedAttackMob
 
         this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.worldObj.spawnEntityInWorld(entityarrow);
+    }
+
+    /**
+     * Sets the held item, or an armor slot. Slot 0 is held item. Slot 1-4 is armor. Params: Item, slot
+     */
+    public void setCurrentItemOrArmor(int par1, ItemStack par2ItemStack)
+    {
+        super.setCurrentItemOrArmor(par1, par2ItemStack);
+
+        if (!this.worldObj.isRemote && par1 == 0)
+        {
+            this.setCombatTask();
+        }
     }
 }

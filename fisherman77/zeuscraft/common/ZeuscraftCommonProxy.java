@@ -19,6 +19,9 @@ import fisherman77.zeuscraft.common.cbronze.WorldGeneratorCBronzeOre;
 import fisherman77.zeuscraft.common.mobs.EntityCentaur;
 
 public class ZeuscraftCommonProxy implements IGuiHandler{//THIS IS IMPORTANT, CANNOT BE A PROXY/GUI HANDLER WITHOUT THIS!!
+	
+	public static String ITEMS_PNG = "/Zeuscraft/ZeuscraftItems.png";
+    public static String BLOCK_PNG = "/Zeuscraft/ZeuscraftBlocks.png";
     
 public void registerRenderInformation() //Client side texture registering
 {
@@ -36,6 +39,10 @@ public void registerTiles(){ //For registering TileEntities
 }
 
 public void registerBlocks(){ //For registering Blocks
+	//Celestial Bronze Block
+		GameRegistry.registerBlock(Zeuscraft.CBronzeBlock, "CBronzeBlock");
+		LanguageRegistry.addName(Zeuscraft.CBronzeBlock, "Celestial Bronze Block");
+		
 	//Celestial Bronze Ore
 		GameRegistry.registerBlock(Zeuscraft.CBronzeOre, "CBronzeOre");
 		LanguageRegistry.addName(Zeuscraft.CBronzeOre, "Celestial Bronze Ore");
@@ -56,6 +63,14 @@ public void registerBlocks(){ //For registering Blocks
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,4), "Dark Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,5), "Red Marble");
 		LanguageRegistry.addName(new ItemStack(Zeuscraft.Marble,1,6), "Marble");
+		
+	//Minotaur Head
+		GameRegistry.registerBlock(Zeuscraft.MinotaurHead, "MinotaurHead");
+		LanguageRegistry.addName(new ItemStack(Zeuscraft.MinotaurHead), "Minotaur Head");
+		
+	//Olympus Portal
+		GameRegistry.registerBlock(Zeuscraft.OlympusPortal, "OlympusPortal");
+		LanguageRegistry.addName(new ItemStack(Zeuscraft.OlympusPortal), "Olympus Portal");
 		
 }
 
@@ -103,6 +118,9 @@ public void registerItems(){ //For adding Item's ingame names
 		
 	//Nectar
 		LanguageRegistry.addName(Zeuscraft.Nectar, "Nectar");
+		
+	//Harpie Head
+		LanguageRegistry.addName(Zeuscraft.HarpieHead, "Harpie Head");
 		
 	//Pegasus Feather
 		LanguageRegistry.addName(Zeuscraft.PegasusFeather, "Pegasus Feather");

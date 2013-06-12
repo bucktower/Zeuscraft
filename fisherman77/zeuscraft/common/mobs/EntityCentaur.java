@@ -53,7 +53,7 @@ public class EntityCentaur extends EntityTameable
   {
 	  this.texture = "/Zeuscraft/Mobs/Centaur/centaurblack.png";
   }
-  this.moveSpeed = 0.5F;
+  this.moveSpeed = 0.4F;
   
   this.tasks.addTask(1, new EntityAIWander(this, this.moveSpeed));
   this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));

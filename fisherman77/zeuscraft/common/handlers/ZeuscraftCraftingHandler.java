@@ -15,6 +15,7 @@ public void onCrafting(EntityPlayer player, ItemStack item, IInventory craftMatr
 {
 if (item.itemID == Zeuscraft.Thunderbolt.itemID)
 {
+player.addStat(Zeuscraft.Thunderstruck, 1);
 }
 }
 
