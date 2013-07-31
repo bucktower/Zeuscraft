@@ -1,6 +1,5 @@
 package fisherman77.zeuscraft.common.handlers;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -14,8 +13,10 @@ import cpw.mods.fml.relauncher.*;
 
 @SideOnly(Side.CLIENT)
 public class ZeuscraftClientPacketHandler implements IPacketHandler{
-@Override
-public void onPacketData(INetworkManager manager, Packet250CustomPayload payload, Player player){
-DataInputStream data = new DataInputStream(new ByteArrayInputStream(payload.data)); //Handles incoming data
-}
+
+	@Override
+	public void onPacketData(INetworkManager manager, Packet250CustomPayload payload, Player player){
+	DataInputStream data = new DataInputStream(new ByteArrayInputStream(payload.data)); //Handles incoming data
+	}
+
 }
