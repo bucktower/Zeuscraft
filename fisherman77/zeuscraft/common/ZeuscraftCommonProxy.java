@@ -27,6 +27,16 @@ public void registerTiles(){ //For registering TileEntities
 }
 
 public void registerBlocks(){ //For registering Blocks
+	//Altar
+		GameRegistry.registerBlock(Zeuscraft.Altar, "Altar");
+		LanguageRegistry.addName(Zeuscraft.Altar, "Altar");
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Altar), "MMM", "ABC", "MMM", Character.valueOf('M'), Zeuscraft.Marble, Character.valueOf('A'), Zeuscraft.PearlNether, Character.valueOf('B'), Zeuscraft.PearlThunder, Character.valueOf('C'), Zeuscraft.PearlWater);
+	//Grape Leaves
+		GameRegistry.registerBlock(Zeuscraft.GrapeLeaves, "GrapeLeaves");
+		LanguageRegistry.addName(Zeuscraft.GrapeLeaves, "Grape Leaves");
+	//Grape Log
+		GameRegistry.registerBlock(Zeuscraft.GrapeLog, "GrapeLog");
+		LanguageRegistry.addName(Zeuscraft.GrapeLog, "Grape Log");
 	//Marble
 		GameRegistry.registerBlock(Zeuscraft.Marble, "Marble");
 		LanguageRegistry.addName(Zeuscraft.Marble, "Marble");
@@ -42,6 +52,14 @@ public void registerItems(){ //For registering Items
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Goblet), "M M", " M ", "MMM", Character.valueOf('M'), Block.planks);
 	//Grapes
 		LanguageRegistry.addName(Zeuscraft.Grapes, "Grapes");
+	//Pearl (Flame)
+		LanguageRegistry.addName(Zeuscraft.PearlNether, "Flame Pearl");
+	//Pearl (Thunder)
+		LanguageRegistry.addName(Zeuscraft.PearlThunder, "Thunder Pearl");
+	//Pearl (Water)
+		LanguageRegistry.addName(Zeuscraft.PearlWater, "Water Pearl");
+	//Scepter
+		LanguageRegistry.addName(Zeuscraft.Scepter, "Scepter");
 	//Thunderbolt
 		LanguageRegistry.addName(Zeuscraft.Thunderbolt, "Thunderbolt");
 	//Trident
