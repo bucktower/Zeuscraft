@@ -20,8 +20,6 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class ItemWine extends ItemFood
 {
-	static Random randGen = new Random();
-	int drunk = randGen.nextInt(3) + 1;
 	
        public ItemWine(int id)
        {
@@ -31,9 +29,9 @@ public class ItemWine extends ItemFood
 
        public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
        {
-               par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, 720, 5));
-               par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 720, 2));
-               return new ItemStack(Zeuscraft.Goblet);
+           par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.confusion.id, 720, 5));
+           par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 720, 2));
+           return new ItemStack(Zeuscraft.Goblet);
        }
        
        @Override

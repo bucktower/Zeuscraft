@@ -2,7 +2,6 @@ package fisherman77.zeuscraft.common.blocks;
 
 import java.util.Random;
 
-import fisherman77.glacierice.common.GlacierIce;
 import fisherman77.zeuscraft.common.Zeuscraft;
 
 import net.minecraft.block.Block;
@@ -15,10 +14,11 @@ public class BlockMarble extends Block
         public BlockMarble(int par1)
         {
                 super(par1, Material.rock); //You can set different materials, check them out!
+                this.setCreativeTab(Zeuscraft.tabZeuscraft);
         }
         public void registerIcons(IconRegister iconRegister)
         {
-                         blockIcon = iconRegister.registerIcon("zeuscraft:Marble");//Telling Forge where our texture is
+                blockIcon = iconRegister.registerIcon("zeuscraft:Marble");//Telling Forge where our texture is
         }
         public int idDropped(int i, Random random, int j)
         {
