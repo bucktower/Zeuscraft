@@ -20,6 +20,7 @@ public class ItemThunderbolt extends Item
        {
              super(id);
              this.setCreativeTab(Zeuscraft.tabZeuscraft);
+             this.maxStackSize = 1;
        }
        
        public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)

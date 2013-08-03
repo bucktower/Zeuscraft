@@ -19,6 +19,7 @@ public class ItemTrident extends Item
        {
              super(id);
              this.setCreativeTab(Zeuscraft.tabZeuscraft);
+             this.maxStackSize = 1;
        }
        
        /**

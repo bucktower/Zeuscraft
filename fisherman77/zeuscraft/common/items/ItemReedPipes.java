@@ -13,19 +13,19 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.client.renderer.texture.IconRegister;
 
-public class ItemGrapes extends Item
+public class ItemReedPipes extends Item
 {
-       public ItemGrapes(int id)
+       public ItemReedPipes(int id)
        {
              super(id);
              this.setCreativeTab(Zeuscraft.tabZeuscraft);
-             this.maxStackSize = 16;
+             this.maxStackSize = 1;
        }
        
        @Override
        @SideOnly(Side.CLIENT)
        public void registerIcons(IconRegister iconRegister)
        {
-    	   itemIcon = iconRegister.registerIcon("zeuscraft:" + "Grapes");
+    	   itemIcon = iconRegister.registerIcon("zeuscraft:" + "ReedPipes");
        }
 }

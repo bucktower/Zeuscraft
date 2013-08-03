@@ -70,4 +70,9 @@ public void registerItems(){ //For registering Items
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Wine), "M  ", "M  ", "G  ", Character.valueOf('M'), Zeuscraft.Grapes, Character.valueOf('G'), Zeuscraft.Goblet);
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Wine), "  M", "  M", "  G", Character.valueOf('M'), Zeuscraft.Grapes, Character.valueOf('G'), Zeuscraft.Goblet);
 }
+
+public void registerRenderers(){
+	
+}
+
 }

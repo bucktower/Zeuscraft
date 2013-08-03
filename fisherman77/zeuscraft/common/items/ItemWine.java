@@ -25,6 +25,7 @@ public class ItemWine extends ItemFood
        {
              super(id, 5, 1.2F, false);
              this.setCreativeTab(Zeuscraft.tabZeuscraft);
+             this.maxStackSize = 1;
        }
 
        public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
