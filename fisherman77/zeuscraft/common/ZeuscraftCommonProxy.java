@@ -37,6 +37,9 @@ public void registerBlocks(){ //For registering Blocks
 	//Grape Log
 		GameRegistry.registerBlock(Zeuscraft.GrapeLog, "GrapeLog");
 		LanguageRegistry.addName(Zeuscraft.GrapeLog, "Grape Log");
+	//Grape Sapling
+		GameRegistry.registerBlock(Zeuscraft.GrapeSapling, "GrapeSapling");
+		LanguageRegistry.addName(Zeuscraft.GrapeSapling, "Grape Sapling");
 	//Marble
 		GameRegistry.registerBlock(Zeuscraft.Marble, "Marble");
 		LanguageRegistry.addName(Zeuscraft.Marble, "Marble");

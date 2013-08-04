@@ -27,8 +27,10 @@ import cpw.mods.fml.common.SidedProxy;
 import fisherman77.zeuscraft.common.blocks.BlockAltar;
 import fisherman77.zeuscraft.common.blocks.BlockGrapeLeaves;
 import fisherman77.zeuscraft.common.blocks.BlockGrapeLog;
+import fisherman77.zeuscraft.common.blocks.BlockGrapeSapling;
 import fisherman77.zeuscraft.common.blocks.BlockMarble;
 import fisherman77.zeuscraft.common.blocks.BlockMarbleSmooth;
+import fisherman77.zeuscraft.common.events.ZeuscraftEventClass;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftServerPacketHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftClientPacketHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftSoundHandler;
@@ -44,6 +46,7 @@ import fisherman77.zeuscraft.common.items.ItemTrident;
 import fisherman77.zeuscraft.common.items.ItemWine;
 import fisherman77.zeuscraft.common.mobs.EntityPegasus;
 import fisherman77.zeuscraft.common.tabs.TabZeuscraft;
+import fisherman77.zeuscraft.common.worldgen.WorldGenGrapeTree;
 
 @NetworkMod(clientSideRequired=true,serverSideRequired=true, //Whether client side and server side are needed
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"Zeuscraft"}, packetHandler = ZeuscraftClientPacketHandler.class), //For clientside packet handling
@@ -64,6 +67,7 @@ public static ZeuscraftCommonProxy proxy;
 		public static Block Altar;
 		public static Block GrapeLeaves;
 		public static Block GrapeLog;
+		public static Block GrapeSapling;
 		public static Block Marble;
 		public static Block MarbleSmooth;
 		
@@ -94,6 +98,7 @@ public void PreInit(FMLPreInitializationEvent e){
 		Altar = new BlockAltar(3978).setUnlocalizedName("Altar");
 		GrapeLeaves = new BlockGrapeLeaves(3976).setUnlocalizedName("GrapeLeaves");
 		GrapeLog = new BlockGrapeLog(3977).setUnlocalizedName("GrapeLog");
+		GrapeSapling = new BlockGrapeSapling(3979, 0).setUnlocalizedName("GrapeSapling");
 		Marble = new BlockMarble(3974).setUnlocalizedName("Marble");
 		MarbleSmooth = new BlockMarbleSmooth(3975).setUnlocalizedName("Marble Smooth");
 	//ITEMS
@@ -122,6 +127,13 @@ public void InitZeuscraft(FMLInitializationEvent event){ //Your main initializat
 		//Pegasus
 			registerEntity(EntityPegasus.class, "Pegasus",  0xf4f4f4, 0xb8a63c);
 			LanguageRegistry.instance().addStringLocalization("entity.Pegasus.name", "Pegasus");
+			
+	//WORLD GEN
+		//Grape Tree
+			GameRegistry.registerWorldGenerator(new WorldGenGrapeTree(false));
+			
+	//EVENTS
+			MinecraftForge.EVENT_BUS.register(new ZeuscraftEventClass());
 	
 	//MULTIPLAYER ABILITY
 		NetworkRegistry.instance().registerGuiHandler(this, proxy); //Registers the class that deals with GUI data
