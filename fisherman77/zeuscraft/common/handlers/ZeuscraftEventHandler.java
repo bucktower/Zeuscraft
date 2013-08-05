@@ -1,4 +1,4 @@
-package fisherman77.zeuscraft.common.events;
+package fisherman77.zeuscraft.common.handlers;
 
 import java.awt.Event;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 
-public class ZeuscraftEventClass
+public class ZeuscraftEventHandler
 {
 	private int BlockID;
 	/** Used to make the sapling grow the tree **/

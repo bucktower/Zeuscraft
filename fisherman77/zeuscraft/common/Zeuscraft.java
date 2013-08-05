@@ -30,7 +30,7 @@ import fisherman77.zeuscraft.common.blocks.BlockGrapeLog;
 import fisherman77.zeuscraft.common.blocks.BlockGrapeSapling;
 import fisherman77.zeuscraft.common.blocks.BlockMarble;
 import fisherman77.zeuscraft.common.blocks.BlockMarbleSmooth;
-import fisherman77.zeuscraft.common.events.ZeuscraftEventClass;
+import fisherman77.zeuscraft.common.handlers.ZeuscraftEventHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftServerPacketHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftClientPacketHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftSoundHandler;
@@ -133,7 +133,7 @@ public void InitZeuscraft(FMLInitializationEvent event){ //Your main initializat
 			GameRegistry.registerWorldGenerator(new WorldGenGrapeTree(false));
 			
 	//EVENTS
-			MinecraftForge.EVENT_BUS.register(new ZeuscraftEventClass());
+		MinecraftForge.EVENT_BUS.register(new ZeuscraftEventHandler());
 	
 	//MULTIPLAYER ABILITY
 		NetworkRegistry.instance().registerGuiHandler(this, proxy); //Registers the class that deals with GUI data

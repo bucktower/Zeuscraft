@@ -61,7 +61,7 @@ public class WorldGenGrapeTree extends WorldGenerator implements IWorldGenerator
 				{
 					for (j1 = par5 - b0; j1 <= par5 + b0 && flag; ++j1)
 					{
-						if (i1 >= 0 && i1 < 256)
+						if (i1 > 0 && i1 < 256)
 						{
 							k1 = par1World.getBlockId(l1, i1 -1, j1);
 							/** Custom grass block **/
@@ -75,6 +75,7 @@ public class WorldGenGrapeTree extends WorldGenerator implements IWorldGenerator
 							{
 								flag = false;
 							}
+							//System.out.println("[Zeuscraft] Generating Grape Trees");
 						}
 						else
 						{
@@ -162,20 +163,16 @@ public class WorldGenGrapeTree extends WorldGenerator implements IWorldGenerator
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 	IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
 	{
-		BiomeGenBase b = world.getBiomeGenForCoords(chunkX, chunkZ);
-        if(b.biomeName.equals("Plains") || b.biomeName.equals("Extreme Hills"))
-        {
-	        for(int i = 0; i < 10; i++)
-			{
-				
-				int xCoord = chunkX + random.nextInt(16);
-				int yCoord = random.nextInt(16);
-				int zCoord = chunkZ + random.nextInt(16);
-				
-				/** Custom WorldGenTutorialTree block **/
-				(new WorldGenGrapeTree(false, 9, 0, 0, false)).generate(world, random, xCoord, yCoord, zCoord);
-			}
-        }
+
+		int xCoord, yCoord, zCoord;
+		for(int i = 0; i < 10; i++)
+		{
+		       xCoord = chunkX + random.nextInt(16);
+		       yCoord = 50 + random.nextInt(206);//try generate between 50 and 256
+		       zCoord = chunkZ + random.nextInt(16);
+		if(generate(world, random, xCoord, yCoord, zCoord))
+		       break;
+		}
 		
 	}
 }

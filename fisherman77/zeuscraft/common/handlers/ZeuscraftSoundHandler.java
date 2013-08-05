@@ -15,9 +15,13 @@ public class ZeuscraftSoundHandler
     {
         try 
         {
-        //BARY
-            event.manager.addSound("zeuscraft:pegasusliving.ogg");          
-            event.manager.addSound("zeuscraft:pegasushurt.ogg");
+        //ITEMS
+        	//Reed Pipes
+        		event.manager.addSound("zeuscraft:reedpipes.ogg");
+        //MOBS
+	        //Pegasus
+	            event.manager.addSound("zeuscraft:pegasusliving.ogg");          
+	            event.manager.addSound("zeuscraft:pegasushurt.ogg");
         } 
         catch (Exception e)
         {
