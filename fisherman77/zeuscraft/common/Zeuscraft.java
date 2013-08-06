@@ -44,7 +44,7 @@ import fisherman77.zeuscraft.common.items.ItemScepter;
 import fisherman77.zeuscraft.common.items.ItemThunderbolt;
 import fisherman77.zeuscraft.common.items.ItemTrident;
 import fisherman77.zeuscraft.common.items.ItemWine;
-import fisherman77.zeuscraft.common.mobs.EntityPegasus;
+import fisherman77.zeuscraft.common.mobs.*;
 import fisherman77.zeuscraft.common.tabs.TabZeuscraft;
 import fisherman77.zeuscraft.common.worldgen.WorldGenGrapeTree;
 
@@ -127,6 +127,9 @@ public void InitZeuscraft(FMLInitializationEvent event){ //Your main initializat
 		//Pegasus
 			registerEntity(EntityPegasus.class, "Pegasus",  0xf4f4f4, 0xb8a63c);
 			LanguageRegistry.instance().addStringLocalization("entity.Pegasus.name", "Pegasus");
+		//Theseus
+			registerEntity(EntityTheseus.class, "Theseus",  0x882e20, 0xa67e56);
+			LanguageRegistry.instance().addStringLocalization("entity.Theseus.name", "Theseus");
 			
 	//WORLD GEN
 		//Grape Tree

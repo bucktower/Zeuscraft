@@ -33,11 +33,11 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 
-public class EntityHeckhound extends EntityAnimal
+public class EntityTheseus extends EntityAnimal
 {
 
 	
- public EntityHeckhound(World world) 
+ public EntityTheseus(World world) 
  {
 	 super(world);
 
@@ -46,8 +46,9 @@ public class EntityHeckhound extends EntityAnimal
   this.getNavigator().setAvoidsWater(true);
   
   this.tasks.addTask(0, new EntityAIPanic(this, 1.25D));
-  this.tasks.addTask(1, new EntityAIWander(this, 0.4D));
-  this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+  this.tasks.addTask(1, new EntityAITempt(this, 1.25D, Item.appleRed.itemID, false));
+  this.tasks.addTask(2, new EntityAIWander(this, 0.4D));
+  this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
  }
  
 	@Override
@@ -66,30 +67,6 @@ public class EntityHeckhound extends EntityAnimal
 protected boolean isAIEnabled()
 {
     return true;
-}
-
-/**
- * Returns the sound this mob makes while it's alive.
- */
-protected String getLivingSound()
-{
-    return "zeuscraft:heckhoundliving";
-}
-
-/**
- * Returns the sound this mob makes when it is hurt.
- */
-protected String getHurtSound()
-{
-    return "zeuscraft:heckhoundhurt";
-}
-
-/**
- * Returns the sound this mob makes on death.
- */
-protected String getDeathSound()
-{
-    return "zeuscraft:heckhoundhurt";
 }
 
 protected boolean canDespawn()
