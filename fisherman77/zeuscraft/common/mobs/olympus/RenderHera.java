@@ -1,8 +1,9 @@
-package fisherman77.zeuscraft.common.mobs;
+package fisherman77.zeuscraft.common.mobs.olympus;
 
 import com.google.common.collect.Maps;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
 import java.util.Map;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
@@ -26,7 +27,7 @@ import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 @SideOnly(Side.CLIENT)
-public class RenderTheseus extends RenderLiving
+public class RenderHera extends RenderLiving
 {
     protected ModelBiped modelBipedMain;
     protected float field_77070_b;
@@ -34,17 +35,17 @@ public class RenderTheseus extends RenderLiving
     protected ModelBiped field_82425_h;
     private static final Map field_110859_k = Maps.newHashMap();
     
-	private static final ResourceLocation skin = new ResourceLocation("zeuscraft", "textures/entities/Theseus.png");
+	private static final ResourceLocation skin = new ResourceLocation("zeuscraft", "textures/entities/olympus/hera.png");
 
     /** List of armor texture filenames. */
     public static String[] bipedArmorFilenamePrefix = new String[] {"leather", "chainmail", "iron", "diamond", "gold"};
 
-    public RenderTheseus(ModelBiped par1ModelBiped, float par2)
+    public RenderHera(ModelBiped par1ModelBiped, float par2)
     {
         this(par1ModelBiped, par2, 1.0F);
     }
 
-    public RenderTheseus(ModelBiped par1ModelBiped, float par2, float par3)
+    public RenderHera(ModelBiped par1ModelBiped, float par2, float par3)
     {
         super(par1ModelBiped, par2);
         this.modelBipedMain = par1ModelBiped;
@@ -106,7 +107,7 @@ public class RenderTheseus extends RenderLiving
         return resourcelocation;
     }
 
-    protected int func_130006_a(EntityTheseus par1EntityLiving, int par2, float par3)
+    protected int func_130006_a(EntityHera par1EntityLiving, int par2, float par3)
     {
         ItemStack itemstack = par1EntityLiving.func_130225_q(3 - par2);
 
@@ -164,7 +165,7 @@ public class RenderTheseus extends RenderLiving
         return -1;
     }
 
-    protected void func_130013_c(EntityTheseus par1EntityLiving, int par2, float par3)
+    protected void func_130013_c(EntityHera par1EntityLiving, int par2, float par3)
     {
         ItemStack itemstack = par1EntityLiving.func_130225_q(3 - par2);
 
@@ -181,7 +182,7 @@ public class RenderTheseus extends RenderLiving
         }
     }
 
-    public void doRenderLiving(EntityTheseus par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
+    public void doRenderLiving(EntityHera par1EntityLiving, double par2, double par4, double par6, float par8, float par9)
     {
         float f2 = 1.0F;
         GL11.glColor3f(f2, f2, f2);
@@ -199,21 +200,21 @@ public class RenderTheseus extends RenderLiving
         this.field_82423_g.isSneak = this.field_82425_h.isSneak = this.modelBipedMain.isSneak = false;
         this.field_82423_g.heldItemRight = this.field_82425_h.heldItemRight = this.modelBipedMain.heldItemRight = 0;
     //Rendering Name Above Head
-        renderLivingLabel(par1EntityLiving, "Theseus", par2, par4, par6, 64);
+        renderLivingLabel(par1EntityLiving, "Hera", par2, par4 + 0.5D, par6, 64);
     }
 
-    protected ResourceLocation func_110856_a(EntityTheseus par1EntityTheseus)
+    protected ResourceLocation func_110856_a(EntityHera par1EntityHera)
     {
         return null;
     }
 
-    protected void func_82420_a(EntityTheseus par1EntityLiving, ItemStack par2ItemStack)
+    protected void func_82420_a(EntityHera par1EntityLiving, ItemStack par2ItemStack)
     {
         this.field_82423_g.heldItemRight = this.field_82425_h.heldItemRight = this.modelBipedMain.heldItemRight = par2ItemStack != null ? 1 : 0;
         this.field_82423_g.isSneak = this.field_82425_h.isSneak = this.modelBipedMain.isSneak = par1EntityLiving.isSneaking();
     }
 
-    protected void func_130005_c(EntityTheseus par1EntityLiving, float par2)
+    protected void func_130005_c(EntityHera par1EntityLiving, float par2)
     {
         float f1 = 1.0F;
         GL11.glColor3f(f1, f1, f1);
@@ -341,7 +342,7 @@ public class RenderTheseus extends RenderLiving
 
     protected void func_82439_b(EntityLivingBase par1EntityLivingBase, int par2, float par3)
     {
-        this.func_130013_c((EntityTheseus)par1EntityLivingBase, par2, par3);
+        this.func_130013_c((EntityHera)par1EntityLivingBase, par2, par3);
     }
 
     /**
@@ -349,17 +350,17 @@ public class RenderTheseus extends RenderLiving
      */
     protected int shouldRenderPass(EntityLivingBase par1EntityLivingBase, int par2, float par3)
     {
-        return this.func_130006_a((EntityTheseus)par1EntityLivingBase, par2, par3);
+        return this.func_130006_a((EntityHera)par1EntityLivingBase, par2, par3);
     }
 
     protected void renderEquippedItems(EntityLivingBase par1EntityLivingBase, float par2)
     {
-        this.func_130005_c((EntityTheseus)par1EntityLivingBase, par2);
+        this.func_130005_c((EntityHera)par1EntityLivingBase, par2);
     }
 
     public void renderPlayer(EntityLivingBase par1EntityLivingBase, double par2, double par4, double par6, float par8, float par9)
     {
-        this.doRenderLiving((EntityTheseus)par1EntityLivingBase, par2, par4, par6, par8, par9);
+        this.doRenderLiving((EntityHera)par1EntityLivingBase, par2, par4, par6, par8, par9);
     }
 
     protected ResourceLocation func_110775_a(Entity par1Entity)
@@ -375,6 +376,6 @@ public class RenderTheseus extends RenderLiving
      */
     public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
     {
-        this.doRenderLiving((EntityTheseus)par1Entity, par2, par4, par6, par8, par9);
+        this.doRenderLiving((EntityHera)par1Entity, par2, par4, par6, par8, par9);
     }
 }

@@ -1,4 +1,4 @@
-package fisherman77.zeuscraft.common.mobs;
+package fisherman77.zeuscraft.common.mobs.heroes;
 
 import java.util.Random;
 
@@ -7,6 +7,7 @@ import net.minecraft.block.StepSound;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
@@ -27,6 +28,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
@@ -35,20 +37,20 @@ import net.minecraft.world.World;
 
 public class EntityTheseus extends EntityAnimal
 {
-
+	public static final ItemStack defaultHeldItem = new ItemStack(Item.swordIron, 1);
 	
  public EntityTheseus(World world) 
  {
 	 super(world);
 
-	 this.setSize(1.0F, 3.0F);
+	 this.setSize(1.0F, 1.75F);
   
   this.getNavigator().setAvoidsWater(true);
   
-  this.tasks.addTask(0, new EntityAIPanic(this, 1.25D));
-  this.tasks.addTask(1, new EntityAITempt(this, 1.25D, Item.appleRed.itemID, false));
-  this.tasks.addTask(2, new EntityAIWander(this, 0.4D));
-  this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+  this.tasks.addTask(0, new EntityAISwimming(this));
+  this.tasks.addTask(1, new EntityAIWander(this, 0.4D));
+  this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+  this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
  }
  
 	@Override
@@ -59,25 +61,30 @@ public class EntityTheseus extends EntityAnimal
 	    func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(9); //maxHealth
 	}
  
- public EnumCreatureAttribute getCreatureAttribute()
-    {
-        return EnumCreatureAttribute.UNDEAD;
-    }
-
-protected boolean isAIEnabled()
-{
-    return true;
-}
-
-protected boolean canDespawn()
-{
-	return false;
-}
-
-@Override
-public EntityAgeable createChild(EntityAgeable entityageable) {
-	// TODO Auto-generated method stub
-	return null;
-}
+	 public EnumCreatureAttribute getCreatureAttribute()
+	    {
+	        return EnumCreatureAttribute.UNDEAD;
+	    }
+	
+	protected boolean isAIEnabled()
+	{
+	    return true;
+	}
+	
+	protected boolean canDespawn()
+	{
+		return false;
+	}
+	
+	@Override
+	public EntityAgeable createChild(EntityAgeable entityageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ItemStack getHeldItem()
+	{
+        return defaultHeldItem;
+	}
 
 }

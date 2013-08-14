@@ -27,7 +27,6 @@ import cpw.mods.fml.common.SidedProxy;
 import fisherman77.zeuscraft.common.blocks.BlockAltar;
 import fisherman77.zeuscraft.common.blocks.BlockGrapeLeaves;
 import fisherman77.zeuscraft.common.blocks.BlockGrapeLog;
-import fisherman77.zeuscraft.common.blocks.BlockGrapeSapling;
 import fisherman77.zeuscraft.common.blocks.BlockMarble;
 import fisherman77.zeuscraft.common.blocks.BlockMarbleSmooth;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftEventHandler;
@@ -45,8 +44,23 @@ import fisherman77.zeuscraft.common.items.ItemThunderbolt;
 import fisherman77.zeuscraft.common.items.ItemTrident;
 import fisherman77.zeuscraft.common.items.ItemWine;
 import fisherman77.zeuscraft.common.mobs.*;
+import fisherman77.zeuscraft.common.mobs.heroes.EntityAchilles;
+import fisherman77.zeuscraft.common.mobs.heroes.EntityTheseus;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityAphrodite;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityApollo;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityAres;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityArtemis;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityAthena;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityDemeter;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityDionysus;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityHades;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityHelios;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityHera;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityHermes;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityHestia;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityPoseidon;
+import fisherman77.zeuscraft.common.mobs.olympus.EntityZeus;
 import fisherman77.zeuscraft.common.tabs.TabZeuscraft;
-import fisherman77.zeuscraft.common.worldgen.WorldGenGrapeTree;
 
 @NetworkMod(clientSideRequired=true,serverSideRequired=true, //Whether client side and server side are needed
 clientPacketHandlerSpec = @SidedPacketHandler(channels = {"Zeuscraft"}, packetHandler = ZeuscraftClientPacketHandler.class), //For clientside packet handling
@@ -67,11 +81,12 @@ public static ZeuscraftCommonProxy proxy;
 		public static Block Altar;
 		public static Block GrapeLeaves;
 		public static Block GrapeLog;
-		public static Block GrapeSapling;
+		//public static Block GrapeSapling;
 		public static Block Marble;
 		public static Block MarbleSmooth;
 		
 	//ITEMS
+		//public static Item Club;
 		public static Item Goblet;
 		public static Item Grapes;
 		public static Item PearlNether;
@@ -82,6 +97,17 @@ public static ZeuscraftCommonProxy proxy;
 		public static Item Thunderbolt;
 		public static Item Trident;
 		public static Item Wine;
+		
+	//CELESTIAL BRONZE
+		public static Item BootsCBronze;
+		public static Item ChestCBronze;
+		public static Item HelmetCBronze;
+		public static Item IngotCBronze;
+		public static Item LeggingsCBronze;
+		
+	//IMPERIAL GOLD
+		
+	//STYGIAN IRON
 		
 	//TABS
 		public static CreativeTabs tabZeuscraft = new TabZeuscraft(CreativeTabs.getNextID(),"Zeuscraft");
@@ -98,10 +124,12 @@ public void PreInit(FMLPreInitializationEvent e){
 		Altar = new BlockAltar(3978).setUnlocalizedName("Altar");
 		GrapeLeaves = new BlockGrapeLeaves(3976).setUnlocalizedName("GrapeLeaves");
 		GrapeLog = new BlockGrapeLog(3977).setUnlocalizedName("GrapeLog");
-		GrapeSapling = new BlockGrapeSapling(3979, 0).setUnlocalizedName("GrapeSapling");
+		//Grape Sapling ID 3979
 		Marble = new BlockMarble(3974).setUnlocalizedName("Marble");
 		MarbleSmooth = new BlockMarbleSmooth(3975).setUnlocalizedName("Marble Smooth");
+		
 	//ITEMS
+		//Club = new ItemClub(4254).setUnlocalizedName("Club");
 		Goblet = new ItemGoblet(4246).setUnlocalizedName("Goblet");
 		Grapes = new ItemGrapes(4247).setUnlocalizedName("Grapes");
 		PearlNether = new ItemPearlNether(4250).setUnlocalizedName("PearlNether");
@@ -112,6 +140,20 @@ public void PreInit(FMLPreInitializationEvent e){
 		Thunderbolt = new ItemThunderbolt(4244).setUnlocalizedName("Thunderbolt");
 		Trident = new ItemTrident(4245).setUnlocalizedName("Trident");
 		Wine = new ItemWine(4248).setUnlocalizedName("Wine");
+		
+	//CELESTIAL BRONZE
+		BootsCBronze = new ItemBootsCBronze(4255).setUnlocalizedName("BootsCBronze");
+		ChestCBronze = new ItemGoblet(4256).setUnlocalizedName("ChestCBronze");
+		HelmetCBronze = new ItemGoblet(4257).setUnlocalizedName("HelmetCBronze");
+		IngotCBronze = new ItemGoblet(4258).setUnlocalizedName("IngotCBronze");
+		LeggingsCBronze = new ItemGoblet(4259).setUnlocalizedName("LeggingsCBronze");
+
+		
+	//IMPERIAL GOLD
+		
+		
+	//STYGIAN IRON
+		
 	}
 
 @Init
@@ -124,16 +166,78 @@ public void InitZeuscraft(FMLInitializationEvent event){ //Your main initializat
 		
 	//MOBS
 		proxy.registerRenderers();
-		//Pegasus
-			registerEntity(EntityPegasus.class, "Pegasus",  0xf4f4f4, 0xb8a63c);
-			LanguageRegistry.instance().addStringLocalization("entity.Pegasus.name", "Pegasus");
-		//Theseus
-			registerEntity(EntityTheseus.class, "Theseus",  0x882e20, 0xa67e56);
-			LanguageRegistry.instance().addStringLocalization("entity.Theseus.name", "Theseus");
+		//MONSTERS
+		
+		
+		//ANIMALS
+			//Cyclops
+				registerEntity(EntityCyclops.class, "Cyclops",  0x882e20, 0xa67e56);
+				LanguageRegistry.instance().addStringLocalization("entity.Cyclops.name", "Cyclops");
+			//Minotaur
+				registerEntity(EntityMinotaur.class, "Minotaur",  0x49251b, 0xe39f77);
+				LanguageRegistry.instance().addStringLocalization("entity.Minotaur.name", "Minotaur");
+			//Pegasus
+				registerEntity(EntityPegasus.class, "Pegasus",  0xf4f4f4, 0xb8a63c);
+				LanguageRegistry.instance().addStringLocalization("entity.Pegasus.name", "Pegasus");
+			//Satyr
+				registerEntity(EntitySatyr.class, "Satyr",  0xc46f41, 0x2e2000);
+				LanguageRegistry.instance().addStringLocalization("entity.Satyr.name", "Satyr");
+			
+		//HEROES
+			//Theseus
+				registerEntity(EntityTheseus.class, "Theseus",  0x882e20, 0xa67e56);
+				LanguageRegistry.instance().addStringLocalization("entity.Theseus.name", "Theseus");
+			//Achilles
+				registerEntity(EntityAchilles.class, "Achilles",  0x22262b, 0xcca300);
+				LanguageRegistry.instance().addStringLocalization("entity.Achilles.name", "Achilles");
+		
+		//OLYMPUS
+			//Aphrodite
+				registerEntity(EntityAphrodite.class, "Aphrodite",  0xf50027, 0xffd36b);
+				LanguageRegistry.instance().addStringLocalization("entity.Aphrodite.name", "Aphrodite");
+			//Apollo
+				registerEntity(EntityApollo.class, "Apollo",  0xb7b7b7, 0xfcc532);
+				LanguageRegistry.instance().addStringLocalization("entity.Apollo.name", "Apollo");
+			//Ares
+				registerEntity(EntityAres.class, "Ares",  0x988b7f, 0xf70810);
+				LanguageRegistry.instance().addStringLocalization("entity.Ares.name", "Ares");
+			//Artemis
+				registerEntity(EntityArtemis.class, "Artemis",  0x2e9e21, 0x5ef763);
+				LanguageRegistry.instance().addStringLocalization("entity.Artemis.name", "Artemis");
+			//Athena
+				registerEntity(EntityAthena.class, "Athena",  0xf1af0f, 0x900f00);
+				LanguageRegistry.instance().addStringLocalization("entity.Athena.name", "Athena");
+			//Demeter
+				registerEntity(EntityDemeter.class, "Demeter",  0x67b946, 0xff2e4f);
+				LanguageRegistry.instance().addStringLocalization("entity.Demeter.name", "Demeter");
+			//Dionysus
+				registerEntity(EntityDionysus.class, "Dionysus",  0xdedede, 0xa926eb);
+				LanguageRegistry.instance().addStringLocalization("entity.Dionysus.name", "Dionysus");
+			//Hades
+				registerEntity(EntityHades.class, "Hades",  0xc58711, 0xa80b0b);
+				LanguageRegistry.instance().addStringLocalization("entity.Hades.name", "Hades");
+			//Helios
+				registerEntity(EntityHelios.class, "Helios",  0xff970c, 0xfff980);
+				LanguageRegistry.instance().addStringLocalization("entity.Helios.name", "Helios");
+			//Hera
+				registerEntity(EntityHera.class, "Hera",  0xe6a625, 0x82f1d6);
+				LanguageRegistry.instance().addStringLocalization("entity.Hera.name", "Hera");
+			//Hermes
+				registerEntity(EntityHermes.class, "Hermes",  0x424242, 0xb51212);
+				LanguageRegistry.instance().addStringLocalization("entity.Hermes.name", "Hermes");
+			//Hestia
+				registerEntity(EntityHestia.class, "Hestia",  0xff0020, 0xff9c00);
+				LanguageRegistry.instance().addStringLocalization("entity.Hestia.name", "Hestia");
+			//Poseidon
+				registerEntity(EntityPoseidon.class, "Poseidon",  0x57c8d7, 0xbffeff);
+				LanguageRegistry.instance().addStringLocalization("entity.Poseidon.name", "Poseidon");
+			//Zeus
+				registerEntity(EntityZeus.class, "Zeus",  0xeaeae9, 0xc99a03);
+				LanguageRegistry.instance().addStringLocalization("entity.Zeus.name", "Zeus");
 			
 	//WORLD GEN
 		//Grape Tree
-			GameRegistry.registerWorldGenerator(new WorldGenGrapeTree(false));
+			//GameRegistry.registerWorldGenerator(new WorldGenGrapeTree(false));
 			
 	//EVENTS
 		MinecraftForge.EVENT_BUS.register(new ZeuscraftEventHandler());
