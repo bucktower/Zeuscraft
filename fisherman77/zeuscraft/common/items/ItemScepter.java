@@ -1,5 +1,7 @@
 package fisherman77.zeuscraft.common.items;
 
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fisherman77.zeuscraft.common.Zeuscraft;
@@ -233,5 +235,12 @@ public class ItemScepter extends Item
        public void registerIcons(IconRegister iconRegister)
        {
     	   itemIcon = iconRegister.registerIcon("zeuscraft:" + "Scepter");
+       }
+       
+       @SideOnly(Side.CLIENT)
+       public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean i)
+       {
+    	   list.add("\u00A72\u00A7oDemeter's Staff");
+    	   list.add("Grow plants/trees on right click.");
        }
 }

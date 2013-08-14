@@ -37,9 +37,6 @@ public void registerBlocks(){ //For registering Blocks
 	//Grape Log
 		GameRegistry.registerBlock(Zeuscraft.GrapeLog, "GrapeLog");
 		LanguageRegistry.addName(Zeuscraft.GrapeLog, "Grape Log");
-	//Grape Sapling
-		GameRegistry.registerBlock(Zeuscraft.GrapeSapling, "GrapeSapling");
-		LanguageRegistry.addName(Zeuscraft.GrapeSapling, "Grape Sapling");
 	//Marble
 		GameRegistry.registerBlock(Zeuscraft.Marble, "Marble");
 		LanguageRegistry.addName(Zeuscraft.Marble, "Marble");
@@ -56,17 +53,19 @@ public void registerItems(){ //For registering Items
 	//Grapes
 		LanguageRegistry.addName(Zeuscraft.Grapes, "Grapes");
 	//Pearl (Flame)
-		LanguageRegistry.addName(Zeuscraft.PearlNether, "Flame Pearl");
+		LanguageRegistry.addName(Zeuscraft.PearlNether, "\u00A7cFlame Pearl");
 	//Pearl (Thunder)
-		LanguageRegistry.addName(Zeuscraft.PearlThunder, "Thunder Pearl");
+		LanguageRegistry.addName(Zeuscraft.PearlThunder, "\u00A7eThunder Pearl");
 	//Pearl (Water)
-		LanguageRegistry.addName(Zeuscraft.PearlWater, "Water Pearl");
+		LanguageRegistry.addName(Zeuscraft.PearlWater, "\u00A7bWater Pearl");
+	//Reed Pipes
+		LanguageRegistry.addName(Zeuscraft.ReedPipes, "Reed Pipes");
 	//Scepter
-		LanguageRegistry.addName(Zeuscraft.Scepter, "Scepter");
+		LanguageRegistry.addName(Zeuscraft.Scepter, "\u00A72Scepter");
 	//Thunderbolt
-		LanguageRegistry.addName(Zeuscraft.Thunderbolt, "Thunderbolt");
+		LanguageRegistry.addName(Zeuscraft.Thunderbolt, "\u00A7eThunderbolt");
 	//Trident
-		LanguageRegistry.addName(Zeuscraft.Trident, "Trident");
+		LanguageRegistry.addName(Zeuscraft.Trident, "\u00A7bTrident");
 	//Wine
 		LanguageRegistry.addName(Zeuscraft.Wine, "Wine");
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Wine), " M ", " M ", " G ", Character.valueOf('M'), Zeuscraft.Grapes, Character.valueOf('G'), Zeuscraft.Goblet);
