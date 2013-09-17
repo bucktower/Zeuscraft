@@ -97,6 +97,7 @@ public static ZeuscraftCommonProxy proxy;
 		public static Item Thunderbolt;
 		public static Item Trident;
 		public static Item Wine;
+		public static Item Nectar;
 		
 	//CELESTIAL BRONZE
 		public static Item BootsCBronze;
@@ -140,6 +141,7 @@ public void PreInit(FMLPreInitializationEvent e){
 		Thunderbolt = new ItemThunderbolt(4244).setUnlocalizedName("Thunderbolt");
 		Trident = new ItemTrident(4245).setUnlocalizedName("Trident");
 		Wine = new ItemWine(4248).setUnlocalizedName("Wine");
+		Nectar = new ItemNectar(4260).setUnlocalizedName("Nectar")
 		
 	//CELESTIAL BRONZE
 		BootsCBronze = new ItemBootsCBronze(4255).setUnlocalizedName("BootsCBronze");
