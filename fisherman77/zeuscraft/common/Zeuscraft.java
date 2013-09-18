@@ -35,6 +35,7 @@ import fisherman77.zeuscraft.common.handlers.ZeuscraftClientPacketHandler;
 import fisherman77.zeuscraft.common.handlers.ZeuscraftSoundHandler;
 import fisherman77.zeuscraft.common.items.ItemGoblet;
 import fisherman77.zeuscraft.common.items.ItemGrapes;
+import fisherman77.zeuscraft.common.items.ItemNectar;
 import fisherman77.zeuscraft.common.items.ItemPearlNether;
 import fisherman77.zeuscraft.common.items.ItemPearlThunder;
 import fisherman77.zeuscraft.common.items.ItemPearlWater;
@@ -141,10 +142,10 @@ public void PreInit(FMLPreInitializationEvent e){
 		Thunderbolt = new ItemThunderbolt(4244).setUnlocalizedName("Thunderbolt");
 		Trident = new ItemTrident(4245).setUnlocalizedName("Trident");
 		Wine = new ItemWine(4248).setUnlocalizedName("Wine");
-		Nectar = new ItemNectar(4260).setUnlocalizedName("Nectar")
+		Nectar = new ItemNectar(4260).setUnlocalizedName("Nectar");
 		
 	//CELESTIAL BRONZE
-		BootsCBronze = new ItemBootsCBronze(4255).setUnlocalizedName("BootsCBronze");
+		BootsCBronze = new ItemGoblet(4255).setUnlocalizedName("BootsCBronze");
 		ChestCBronze = new ItemGoblet(4256).setUnlocalizedName("ChestCBronze");
 		HelmetCBronze = new ItemGoblet(4257).setUnlocalizedName("HelmetCBronze");
 		IngotCBronze = new ItemGoblet(4258).setUnlocalizedName("IngotCBronze");

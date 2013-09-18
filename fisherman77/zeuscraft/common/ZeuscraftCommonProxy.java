@@ -73,9 +73,9 @@ public void registerItems(){ //For registering Items
 		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Wine), "  M", "  M", "  G", Character.valueOf('M'), Zeuscraft.Grapes, Character.valueOf('G'), Zeuscraft.Goblet);
 	//Nectar
 		LanguageRegistry.addName(Zeuscraft.Nectar, "Nectar");
-		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), " P ", " P ", " G ", Character.valueOf('P'), Zeuscraft.PlantNectar, Character.valueOf('G'), Zeuscraft.Goblet);
-		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), "P  ", "P  ", "G  ", Character.valueOf('P'), Zeuscraft.PlantNectar, Character.valueOf('G'), Zeuscraft.Goblet);
-		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), "  P", "  P", "  G", Character.valueOf('P'), Zeuscraft.PlantNectar, Character.valueOf('G'), Zeuscraft.Goblet);
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), " P ", " P ", " G ", Character.valueOf('P'), Zeuscraft.Wine, Character.valueOf('G'), Zeuscraft.Goblet);
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), "P  ", "P  ", "G  ", Character.valueOf('P'), Zeuscraft.Wine, Character.valueOf('G'), Zeuscraft.Goblet);
+		GameRegistry.addRecipe(new ItemStack(Zeuscraft.Nectar), "  P", "  P", "  G", Character.valueOf('P'), Zeuscraft.Wine, Character.valueOf('G'), Zeuscraft.Goblet);
 }
 
 public void registerRenderers(){

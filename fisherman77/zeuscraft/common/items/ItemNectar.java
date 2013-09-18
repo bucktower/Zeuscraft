@@ -30,7 +30,7 @@ public class ItemNectar extends ItemFood
 
        public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
        {
-    	   par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 30, 2));
+    	   par3EntityPlayer.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 720, 1));
            return new ItemStack(Zeuscraft.Goblet);
        }
        
@@ -38,6 +38,6 @@ public class ItemNectar extends ItemFood
        @SideOnly(Side.CLIENT)
        public void registerIcons(IconRegister iconRegister)
        {
-    	   itemIcon = iconRegister.registerIcon("zeuscraft:" + "Nectar");
+    	   itemIcon = iconRegister.registerIcon("zeuscraft:" + "Wine");
        }
 }
